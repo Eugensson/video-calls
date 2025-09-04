@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+
+import { Navbar } from "@/components/navbar";
+import { ClientProvider } from "@/components/client-provider";
+
 import "./globals.css";
 
 const inter = Inter({
@@ -19,8 +24,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${inter.variable} antialiased`}>
+          <ClientProvider>
+            <Navbar />
+            <main className="max-w-5xl mx-auto px-3 py-6">{children}</main>
+          </ClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
