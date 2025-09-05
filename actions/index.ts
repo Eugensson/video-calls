@@ -3,6 +3,9 @@
 import { StreamClient } from "@stream-io/node-sdk";
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 
+const apiKey = process.env.STREAM_VIDEO_API_KEY!;
+const apiSecret = process.env.STREAM_VIDEO_API_SECRET!;
+
 export const getToken = async () => {
   const streamApiSecret = process.env.STREAM_VIDEO_API_SECRET;
   const streamApiKey = process.env.NEXT_PUBLIC_STREAM_VIDEO_API_KEY;
@@ -42,4 +45,26 @@ export const getUserIds = async (emailAddresses: string[]) => {
   });
 
   return data.map((user) => user.id);
+};
+
+export const deleteRecording = async (
+  callType: string,
+  callId: string,
+  sessionId: string,
+  filename: string
+) => {
+  try {
+    const client = new StreamClient(apiKey, apiSecret);
+    const call = client.video.call(callType, callId);
+
+    await call.deleteRecording({
+      session: sessionId,
+      filename,
+    });
+
+    return { success: true };
+  } catch (err) {
+    console.error("Delete recording failed:", err);
+    return { success: false, error: "Failed to delete recording" };
+  }
 };

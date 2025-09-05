@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { Navbar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { ClientProvider } from "@/components/client-provider";
 
 import "./globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({
             <Navbar />
             <main className="max-w-5xl mx-auto px-3 py-6">{children}</main>
           </ClientProvider>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
