@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import { currentUser } from "@clerk/nextjs/server";
 
-import { MeetingLogin } from "@/components/meeting-login";
 import { Meeting } from "@/components/meeting";
-
-interface MeetingPageProps {
-  params: Promise<{
-    id: string;
-  }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
+import { MeetingLogin } from "@/components/meeting-login";
 
 export const generateMetadata = async ({
   params,
@@ -20,6 +13,11 @@ export const generateMetadata = async ({
     title: `Meeting ${id}`,
   };
 };
+
+interface MeetingPageProps {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
 const MeetingPage = async ({ params, searchParams }: MeetingPageProps) => {
   const user = await currentUser();

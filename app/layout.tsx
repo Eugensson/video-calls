@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { ClientProvider } from "@/components/client-provider";
 
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "./globals.css";
 
 const inter = Inter({

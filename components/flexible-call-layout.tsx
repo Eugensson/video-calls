@@ -16,8 +16,6 @@ import { EndCallButton } from "@/components/end-call-button";
 
 import { useStreamCall } from "@/hooks/use-stream-call";
 
-import "@stream-io/video-react-sdk/dist/css/styles.css";
-
 type CallLayout = "speaker-vertical" | "speaker-horizontal" | "grid";
 
 export const FlexibleCallLayout = () => {

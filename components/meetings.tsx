@@ -52,14 +52,14 @@ export const Meetings = () => {
         <ScrollArea className="h-100">
           {!calls && <Loader className="mx-auto my-40 animate-spin" />}
           {calls?.length === 0 && (
-            <div className="py-35 flex flex-col items-center justify-center gap-5">
+            <div className="py-32 flex flex-col items-center justify-center gap-10">
               <p className="text-center">No meetings found.</p>
               <Link
                 href="/"
                 className={buttonVariants({
                   variant: "default",
                   size: "lg",
-                  className: "w-full",
+                  className: "w-fit",
                 })}
               >
                 Create a new meeting

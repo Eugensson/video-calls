@@ -13,20 +13,32 @@ const LeftPage = async ({ params }: LeftPageProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center h-[85vh]">
-      <Card className="w-full max-w-lg p-10">
+      <Card className="p-8 w-full max-w-lg space-y-4">
         <CardHeader>
-          <CardTitle className="flex items-center justify-center gap-2 text-muted-foreground">
+          <CardTitle className="flex items-stretch justify-center gap-2">
             <PhoneOff />
-            <h2 className="text-2xl uppercase">You left this meeting.</h2>
+            <span className="text-xl font-semibold">
+              You left this meeting.
+            </span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
+        <CardContent className="flex items-center gap-6">
+          <Link
+            href={"/"}
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "flex-1",
+            })}
+          >
+            Go to homepage
+          </Link>
           <Link
             href={`/meeting/${id}`}
             className={buttonVariants({
               variant: "default",
               size: "lg",
-              className: "w-full",
+              className: "flex-1",
             })}
           >
             Rejoin

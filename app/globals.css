@@ -119,3 +119,9 @@
     @apply font-inter bg-background text-foreground;
   }
 }
+
+.str-video__notification,
+.str-video__menu-container,
+.str-video__participant-details {
+  color: white;
+}

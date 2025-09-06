@@ -9,10 +9,19 @@ import {
   useCallStateHooks,
   VideoPreview,
 } from "@stream-io/video-react-sdk";
-import { Loader } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
+import { Loader, TriangleAlert } from "lucide-react";
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { RecordingsList } from "@/components/recordings-list";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { PermissionPrompt } from "@/components/permission-prompt";
@@ -47,9 +56,27 @@ export const Meeting = ({ id }: MeetingProps) => {
 
   if (notAllowedToJoin) {
     return (
-      <p className="text-center font-bold">
-        You are not allowed to view this meeting
-      </p>
+      <div className="h-[85vh] flex flex-col items-center justify-center gap-10">
+        <Card className="p-8 w-full max-w-lg space-y-6">
+          <CardHeader className="gap-4">
+            <CardTitle className="flex items-stretch justify-center gap-2 text-destructive">
+              <TriangleAlert />
+              <span className="text-xl font-semibold">Access denied!</span>
+            </CardTitle>
+            <CardDescription className="text-center">
+              This is a private meeting. Only invited members can join.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            <Link
+              href="/"
+              className={buttonVariants({ variant: "default", size: "lg" })}
+            >
+              Go to homepage
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 
@@ -140,14 +167,13 @@ const SetupUi = ({ onSetupComplete }: SetupUiProps) => {
         <AudioVolumeIndicator />
         <DeviceSettings />
       </div>
-      <label className="flex items-center gap-2 font-medium">
-        <input
-          type="checkbox"
+      <Label className="flex items-center gap-2 font-medium cursor-pointer">
+        <Checkbox
           checked={micCamDisabled}
-          onChange={(e) => setMicCamDisabled(e.target.checked)}
+          onCheckedChange={(checked) => setMicCamDisabled(!!checked)}
         />
         Join with mic and camera off
-      </label>
+      </Label>
       <Button onClick={onSetupComplete} size="lg" className="cursor-pointer">
         Join meeting
       </Button>

@@ -1,3 +1,4 @@
+import { PhoneOff } from "lucide-react";
 import { useCallStateHooks } from "@stream-io/video-react-sdk";
 
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,9 @@ export const EndCallButton = () => {
       variant="destructive"
       size="lg"
       onClick={call.endCall}
-      className="cursor-pointer"
+      className="cursor-pointer mx-auto flex items-center gap-2"
     >
+      <PhoneOff />
       End call for everyone
     </Button>
   );
