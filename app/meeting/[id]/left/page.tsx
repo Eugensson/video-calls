@@ -12,7 +12,7 @@ const LeftPage = async ({ params }: LeftPageProps) => {
   const { id } = await params;
 
   return (
-    <div className="flex flex-col items-center justify-center h-[85vh]">
+    <section className="h-full flex flex-col items-center justify-center">
       <Card className="p-8 w-full max-w-lg space-y-4">
         <CardHeader>
           <CardTitle className="flex items-stretch justify-center gap-2">
@@ -45,7 +45,7 @@ const LeftPage = async ({ params }: LeftPageProps) => {
           </Link>
         </CardContent>
       </Card>
-    </div>
+    </section>
   );
 };
 

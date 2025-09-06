@@ -28,9 +28,9 @@ const MeetingPage = async ({ params, searchParams }: MeetingPageProps) => {
 
   if (!user && !guestMode) {
     return (
-      <div className="flex items-center justify-center h-[85vh]">
+      <section className="h-full flex items-center justify-center">
         <MeetingLogin />
-      </div>
+      </section>
     );
   }
 

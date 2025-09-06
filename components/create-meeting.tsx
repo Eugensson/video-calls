@@ -89,12 +89,12 @@ export const CreateMeeting = () => {
   }
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full max-w-lg">
       <CardHeader className="gap-2">
         <CardTitle>
-          <h1 className="text-2xl font-bold text-center">
+          <h2 className="text-2xl font-bold text-center">
             Welcome {user.username}!
-          </h1>
+          </h2>
         </CardTitle>
         <CardDescription className="text-lg text-center">
           Create a new meeting

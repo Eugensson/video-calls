@@ -24,12 +24,12 @@ export const FlexibleCallLayout = () => {
   const router = useRouter();
 
   return (
-    <div className="space-y-3">
+    <section className="space-y-3">
       <CallLayoutButtons layout={layout} setLayout={setLayout} />
       <CallLayoutView layout={layout} />
       <CallControls onLeave={() => router.push(`/meeting/${call.id}/left`)} />
       <EndCallButton />
-    </div>
+    </section>
   );
 };
 

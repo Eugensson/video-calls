@@ -54,7 +54,7 @@ export const MeetingLink = ({ call }: MeetingLinkProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-3 text-center">
+    <section className="flex flex-col items-center gap-3 text-center">
       <div className="flex items-center gap-3 text-xs overflow-hidden">
         <span>Invitation link:</span>
         <Link
@@ -81,6 +81,6 @@ export const MeetingLink = ({ call }: MeetingLinkProps) => {
       >
         Send email invitation
       </Link>
-    </div>
+    </section>
   );
 };

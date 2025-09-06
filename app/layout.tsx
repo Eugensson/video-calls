@@ -15,7 +15,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Video Calls | Connect Instantly with High-Quality Online Meetings",
+  title: {
+    default:
+      "Video Calls | Connect Instantly with High-Quality Online Meetings",
+    template: "%s | Video Calls",
+  },
   description:
     "Host seamless video calls with crystal-clear audio and HD video. Enjoy secure, reliable, and user-friendly online meetings for teams, friends, and clients.",
 };
@@ -31,7 +35,9 @@ export default function RootLayout({
         <body className={`${inter.variable} antialiased`}>
           <ClientProvider>
             <Navbar />
-            <main className="max-w-5xl mx-auto px-3 py-6">{children}</main>
+            <main className="max-w-5xl mx-auto h-[85vh] px-4 md:px-6 py-6">
+              {children}
+            </main>
           </ClientProvider>
           <Toaster />
         </body>

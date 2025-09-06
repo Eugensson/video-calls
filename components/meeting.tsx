@@ -161,7 +161,7 @@ const SetupUi = ({ onSetupComplete }: SetupUiProps) => {
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <h1 className="text-2xl font-bold text-center">Setup</h1>
+      <h2 className="text-2xl font-bold text-center">Setup</h2>
       <VideoPreview />
       <div className="h-16 flex items-center gap-3">
         <AudioVolumeIndicator />
@@ -214,7 +214,7 @@ const UpcommingMeetingScreen = () => {
         href="/"
         className={buttonVariants({ variant: "outline", size: "lg" })}
       >
-        Go home
+        Back to homepage
       </Link>
     </div>
   );
@@ -222,13 +222,13 @@ const UpcommingMeetingScreen = () => {
 
 const MeetingEndedScreen = () => {
   return (
-    <div className="h-[85vh] flex flex-col items-center justify-center gap-6">
+    <div className="h-full flex flex-col items-center justify-center gap-6">
       <h2 className="text-2xl font-bold">This meeting has ended.</h2>
       <Link
         href="/"
         className={buttonVariants({ variant: "default", size: "lg" })}
       >
-        Go home
+        Back to homepage
       </Link>
       <div className="space-y-3">
         <h3 className="text-xl font-semibold text-center">Recordings</h3>

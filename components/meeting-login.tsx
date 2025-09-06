@@ -12,7 +12,7 @@ export const MeetingLogin = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <h1 className="text-center text-2xl font-bold">Join meeting</h1>
+          <h2 className="text-center text-2xl font-bold">Join meeting</h2>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-x-4">

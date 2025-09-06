@@ -13,14 +13,14 @@ import { buttonVariants } from "@/components/ui/button";
 
 const ErrorPage = () => {
   return (
-    <div className="h-[75vh] flex items-center justify-center">
+    <section className="h-full flex items-center justify-center">
       <Card className="w-full max-w-md p-6 bg-destructive/5">
         <CardHeader className="gap-4">
           <CardTitle className="mx-auto">
-            <h1 className="text-2xl font-bold flex items-center gap-2 text-destructive">
+            <h2 className="text-2xl font-bold flex items-center gap-2 text-destructive">
               <TriangleAlert />
               Error
-            </h1>
+            </h2>
           </CardTitle>
           <CardDescription className="text-center">
             Sorry, something went wrong. Please try again.
@@ -34,10 +34,10 @@ const ErrorPage = () => {
             className: "max-w-50 mx-auto",
           })}
         >
-          Go back to home
+          Back to homepage
         </Link>
       </Card>
-    </div>
+    </section>
   );
 };
 
