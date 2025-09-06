@@ -59,6 +59,7 @@ export const MeetingLink = ({ call }: MeetingLinkProps) => {
         <span>Invitation link:</span>
         <Link
           href={meetingLink}
+          target="_blank"
           className="text-muted-foreground truncate max-w-xs"
         >
           {meetingLink}
