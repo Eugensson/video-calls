@@ -10,7 +10,7 @@ export const UpcommingMeetingScreen = () => {
   const call = useStreamCall();
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="h-[85vh] flex flex-col items-center gap-6">
       <p>
         This meeting hes not started yet. It will start at{" "}
         <span className="font-bold">

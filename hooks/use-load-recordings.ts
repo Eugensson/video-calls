@@ -14,6 +14,7 @@ export const useLoadRecordings = (call: Call) => {
       if (!user?.id) return;
 
       const { recordings } = await call.queryRecordings();
+
       setRecordings(recordings);
 
       setRecordingsLoading(false);

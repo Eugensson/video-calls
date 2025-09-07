@@ -154,7 +154,7 @@ export const RecordingsList = () => {
         </DialogContent>
       </Dialog>
 
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-muted-foreground">
         Note: It can take up to 1 minute before new recordings show up.
         <br />
         You can refresh the page to see if new recordings are available.
