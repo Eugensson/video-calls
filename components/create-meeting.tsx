@@ -51,8 +51,6 @@ export const CreateMeeting = () => {
 
       const memberIds = await getUserIds(memberEmails);
 
-      console.log("memberIds", memberIds);
-
       if (participantsInput && memberIds.length === 0) {
         toast.error(
           "You need to add at least one participant for a private meeting"

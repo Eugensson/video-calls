@@ -16,8 +16,6 @@ export const getToken = async () => {
 
   const user = await currentUser();
 
-  console.log("Generating token for user: ", user?.id);
-
   if (!user) {
     throw new Error("User not authenticated");
   }
@@ -31,8 +29,6 @@ export const getToken = async () => {
     exp: now + 60 * 60,
     iat: now - 60,
   });
-
-  console.log("Successfully generated token: ", token);
 
   return token;
 };
