@@ -6,10 +6,10 @@ import { buttonVariants } from "@/components/ui/button";
 const Home = () => {
   return (
     <section className="h-full flex flex-col items-center justify-center gap-10 text-center">
-      <h1 className="text-3xl xl:text-7xl font-bold">
+      <h1 className="max-w-200 text-xl md:text-2xl lg:text-3xl xl:text-6xl font-bold">
         Connect Instantly with High-Quality Online Meetings
       </h1>
-      <p className="text-xl xl:text-4xl text-muted-foreground">
+      <p className="max-w-200 text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground">
         Host seamless video calls with crystal-clear audio and HD video. Enjoy
         secure, reliable, and user-friendly online meetings for teams, friends,
         and clients.

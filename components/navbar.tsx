@@ -8,7 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 export const Navbar = () => {
   return (
     <header className="shadow">
-      <div className="max-w-5xl mx-auto h-14 p-3 flex items-center justify-between font-medium">
+      <div className="max-w-7xl mx-auto h-14 p-3 flex items-center justify-between font-medium">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Image src="/logo.png" alt="Logo" width={25} height={25} />
           <span className="hidden md:block">Video Calls</span>

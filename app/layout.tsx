@@ -36,7 +36,7 @@ export default function RootLayout({
         <body className={`${inter.variable} antialiased`}>
           <ClientProvider>
             <Navbar />
-            <main className="max-w-5xl mx-auto h-[85vh] px-4 md:px-6 py-6">
+            <main className="max-w-6xl mx-auto h-[85vh] px-4 md:px-6 py-6">
               {children}
             </main>
           </ClientProvider>
